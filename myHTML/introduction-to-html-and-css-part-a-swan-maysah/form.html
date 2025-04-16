@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="UTF-8">
+        
+        <title>My first form</title>
+        <body>
+            
+            <link rel="stylesheet" href="style.css">
+            <form>
+                <fieldset>
+                    <h2>fill your Personal details below!</h2>
+                    <legend>Personal info</legend>
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="email">Enter your email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="pwd">Password:</label><br>
+                    <input type="password" id="pwd" name="pwd"><br>
+                    <hr>
+                    <h3>Select your gender</h3>
+                    <input type="radio" id="male" name="Gender" value="Male"><br>
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="Female" name="Gender" value="Female"><br>
+                    <label for="Female">Female</label><br>
+                    <h3>What is your favorite task?</h3>
+                    <input type="checkbox" id="interest" name="interest" value="Programming">
+                    <label for="interest">Programming</label><br>
+                    <input type="checkbox" id="interest2" name="interest2" value="Gaming">
+                    <label for="interest2"> Gaming</label><br>
+                    <input type="checkbox" id="interest3" name="interest3" value="Chilling">
+                    <label for="interest3"> Chilling</label><br>
+                     <hr>
+                     <h3>Add your profile picture</h3>
+                    <label for="profile">Select a profile picture:</label><br>
+                    <input type="profile" id="profile" name="profile"><br>
+                    <hr>
+                    <input type="button" onclick="alert('form submited!')" value="submit here!"><br>
+            </fieldset>
+              </form>
+        </body>
+    </head>
+</html>
