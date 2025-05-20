@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Price Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        input {
+            padding: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #validate {
+            background-color: green;
+            color: white;
+        }
+
+        #result {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Price Validator</h1>
+    <input type="text" id="price" placeholder="Enter price (e.g., $14.99)">
+    <button id="validate">Validate Price</button>
+    <p id="result"></p>
+
+    <script>
+        const priceRegex = /^\$\d*(\.\d{2})?$/;
+        const priceInput = document.getElementById("price");
+        const validateBtn = document.getElementById("validate");
+        const result = document.getElementById("result");
+
+        validateBtn.onclick = () => {
+            const price = priceInput.value.trim();
+            if (priceRegex.test(price)) {
+                result.textContent = "Valid price format!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Invalid price format!";
+                result.style.color = "red";
+            }
+        };
+    </script>
+
+</body>
+</html>

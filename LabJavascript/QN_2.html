@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Self-Closing Tag Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #9b59b6;
+        }
+
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #validate {
+            background-color: #3498db;
+            color: white;
+        }
+
+        #result {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Self-Closing Tag Validator</h1>
+    <input type="text" id="tag" placeholder="Enter a tag (e.g., <img src='foo.jpg' />)">
+    <button id="validate">Validate Tag</button>
+    <p id="result"></p>
+
+    <script>
+        // Regular Expression for Self-Closing HTML Tags
+        const tagRegex = /^<\w+(\s+\w+="[^"]*")*\s*\/>$/;
+
+        const tagInput = document.getElementById("tag");
+        const validateBtn = document.getElementById("validate");
+        const result = document.getElementById("result");
+
+        validateBtn.onclick = () => {
+            const tag = tagInput.value.trim();
+            if (tagRegex.test(tag)) {
+                result.textContent = "Valid self-closing tag!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Invalid tag format!";
+                result.style.color = "red";
+            }
+        };
+    </script>
+
+</body>
+</html>
